@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Forturn';
+  src: url('fonts/Forturn.ttf') format('opentype'),
+       url('fonts/Forturn.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GOOD BRUSH';
+  src: url('fonts/Good-Brush.ttf') format('opentype'),
+       url('fonts/Good-Brush.otf') format('opentype'),
+       url('fonts/Good-Brush.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

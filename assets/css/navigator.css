@@ -1,0 +1,36 @@
+.navigator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    width: 80%;
+    min-width: 1000px;
+    height: 102px;
+    transform: translateX(-50%);
+    background: url(../images/navigator-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.navigator-left {
+    width: 38%;
+    height: 100%;
+}
+.navigator-logo {
+    position: absolute;
+    top: -30px;
+}
+
+.navigator-right {
+    width: 60%;
+    height: 100%;
+}
+
+.navigator-text {
+    width: 20%;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    font-family: 'Forturn';
+    color: #FFFFFF;
+}
