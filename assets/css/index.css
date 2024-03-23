@@ -1,3 +1,6 @@
+html {
+  font-size: 100%;
+}
 body {
     margin:0;
     padding:0;
@@ -6,6 +9,10 @@ body {
 p {
     margin:0;
     padding:0;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 /*marquee start*/
 .marquee {
@@ -57,7 +64,7 @@ p {
     background: url(../images/header-brief-bg.png) no-repeat;
     width: 656px;
     height: 204px;
-    background-color: #000;
+    opacity: 1;
     p {
         margin: 40px 60px 0 60px;
         text-align: center;
@@ -84,7 +91,6 @@ p {
          height: 100%;
          margin: auto;
     }
-    border: 1px solid red;
 }
 .carousel-left {
     perspective: 800px;
@@ -112,3 +118,310 @@ p {
     }
 }
 /*carousel end*/
+/*video start*/
+.video-area {
+    margin-top: 128px;
+    width: 100%;
+    height: 200px;
+}
+.video-left {
+    width: 30%;
+}
+.video-right{
+    width: 30%;
+}
+.video-curr{
+    width: 40%;
+}
+.video-col {
+    border: 1px solid red;
+}
+/*video end*/
+/*tokenomics start*/
+.tokenomics {
+    margin-top: 128px;
+}
+.tokenomics-title {
+    background: url(../images/TOKENOMICS.png) no-repeat;
+    width: 614px;
+    height: 103px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tokenomics-addr {
+    width:100%;
+    height: 50px;
+}
+.tokenomics-addr-token {
+    height: 50px;
+    line-height: 50px;
+    font-family: "East Sea Dokdo", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    font-style: normal;
+    color: #FFF;
+}
+.tokenomics-copy {
+    margin-left: 20px;
+    width: 148px;
+    height: 50px;
+    background: url(../images/tokenomics-copy-bg.png) no-repeat;
+    cursor: pointer;
+}
+.tokenomics-data {
+    margin-top: 98px;
+    height: 320px;
+    width: 100%;
+}
+.tokenomics-data-item {
+    position: relative;
+    p.title {
+        font-family: "East Sea Dokdo", sans-serif;
+        font-weight: 400;
+        font-size: 3em;
+        font-style: normal;
+        color: #FFF;
+    }
+    p.value {
+        font-family: "East Sea Dokdo", sans-serif;
+        font-weight: 400;
+        font-size: 6em;
+        font-style: normal;
+        color: #C7F284;
+    }
+}
+.tokenomics-data-left {
+    width: 12.7%;
+    img {
+        position: absolute;
+        bottom: 0px;
+        width: 130%;
+    }
+}
+.tokenomics-supply {
+    width: 20%;
+    img {
+        position: absolute;
+        right: 18%;
+        bottom: 0;
+        width: 130%;
+    }
+    p.title {
+        position: absolute;
+        top: 0%;
+        left: -13%;
+    }
+    p.value {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+    }
+}
+.tokenomics-mint {
+    width: 20%;
+    img {
+        position: absolute;
+        left: -14%;
+        bottom: 0;
+        width: 130%;
+    }
+    p.title {
+        position: absolute;
+        top: -10%;
+        left: -8%;
+    }
+    p.value {
+        position: absolute;
+        top: 30%;
+        left: -5%;
+    }
+}
+.tokenomics-tax {
+    width: 18.6%;
+    img {
+        position: absolute;
+        right: -5%;
+        bottom: 0;
+        width: 130%;
+    }
+    p.title {
+        position: absolute;
+        top: -10%;
+        left: 24%;
+    }
+    p.value {
+        position: absolute;
+        top: 30%;
+        left: 30%;
+    }
+}
+.tokenomics-liquidity {
+    width: 20%;
+    img {
+        position: absolute;
+        left: -6%;
+        bottom: 0px;
+        width: 132%;
+    }
+    p.title {
+        position: absolute;
+        top: -10%;
+        left: 20%;
+    }
+    p.value {
+        position: absolute;
+        top: 30%;
+        left: 8%;
+    }
+}
+.tokenomics-data-right {
+    width: 8.4%;
+    img {
+        position: absolute;
+        right: 0%;
+        bottom: 0;
+        width: 130%;
+    }
+}
+/*tokenomics end*/
+/*howtobuy start*/
+.howtobuy {
+    margin-top: 88px;
+}
+.howtobuy-text {
+    font-family: "GOOD BRUSH";
+    font-size: 18em;
+    line-height: 1em;
+    text-align: center;
+    opacity: 0.3;
+}
+.howtobuy-top {
+    color: #FF2596;
+}
+.howtobuy-bottom {
+    color: #2D82FF;
+}
+.howtobuy-mid {
+    width: 100%;
+    z-index: 9;
+}
+.howtobuy-col {
+    width: 72%;
+    margin-left: auto;
+    margin-right: auto;
+    .flow-row {
+        width: 100%;
+        height: 190px;
+    }
+}
+.howtobuy-col-item {
+    position: relative;
+    width: 50%;
+    img {
+        width: 100%;
+        position: absolute;
+    }
+    .howtobuy-title {
+        font-family: "GOOD BRUSH";
+        font-size: 3em;
+        line-height: 1em;
+        text-align: center;
+        position: absolute;
+    }
+    .howtobuy-content {
+        font-family: "East Sea Dokdo";
+        font-size: 2em;
+        line-height: 1em;
+        text-align: center;
+        color: #FFF;
+        position: absolute;
+        text-align: left;
+    }
+}
+.howtobuy-item-1 {
+    img.howtobuy-bg {
+        top: -80%;
+        left: 0;
+        width: 110%;
+    }
+    img.howtobuy-icon {
+        top: -106%;
+        left: 55%;
+        width: 30%;
+    }
+    .howtobuy-title {
+        top: -50%;
+        left: 10%;
+        color: #FF2596;
+    }
+    .howtobuy-content {
+        top: -20%;
+        left: 10%;
+    }
+}
+.howtobuy-item-2 {
+    img.howtobuy-bg {
+        top: -80%;
+        right: 0;
+        width: 109%;
+    }
+    img.howtobuy-icon {
+        top: -100%;
+        right: 5%;
+        width: 40%;
+    }
+    .howtobuy-title {
+        top: -50%;
+        left: 8%;
+        color: #FF2596;
+    }
+    .howtobuy-content {
+        top: -20%;
+        left: 8%;
+        width: 90%;
+    }
+}
+.howtobuy-item-3 {
+    img.howtobuy-bg {
+        bottom: -80%;
+        left: 0;
+        width: 93%;
+    }
+    img.howtobuy-icon {
+        bottom: -97%;
+        left: 5%;
+        width: 30%;
+    }
+    .howtobuy-title {
+        top: 10%;
+        left: 10%;
+        color: #2D82FF;
+    }
+    .howtobuy-content {
+        top: 40%;
+        left: 10%;
+        width: 50%;
+    }
+}
+.howtobuy-item-4 {
+    img.howtobuy-bg {
+        bottom: -80%;
+        right: 0;
+        width: 118%;
+    }
+    img.howtobuy-icon {
+        bottom: -97%;
+        left: -13%;
+        width: 35%;
+    }
+    .howtobuy-title {
+        top: 25%;
+        left: 0%;
+        color: #2D82FF;
+    }
+    .howtobuy-content {
+        top: 55%;
+        left: 0%;
+    }
+}
+/*howtobuy end*/
