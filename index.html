@@ -8,14 +8,12 @@
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/flex.css">
     <link rel="stylesheet" href="assets/css/navigator.css">
-    <!--fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
 </head>
 <body>
 <!--header area start-->
 <div class="header flex-col justify-start">
+    <div class="header-bg">
+    </div>
     <div class="marquee flex-row">
     <span>AI col i gess</span>
     <span class="dark">AI col i gess</span>
@@ -101,19 +99,19 @@
     <div class="carousel-item carousel-right">
         <img src="assets/images/carousel-1.png">
     </div>
+    <img class="carousel-bg carousel-bg-tl" src="assets/images/carousel-bg-tl.png">
+    <img class="carousel-bg carousel-bg-tr" src="assets/images/carousel-bg-tr.png">
 </div>
 <!--carousel area end-->
 <!--video area start-->
-<div class="video-area flex-row justify-between">
-    <div class="video-col video-left">
-        left
+<div class="video-area">
+    <div class="video-left"></div>
+    <div class="video-main">
+        <!-- TODO -->
+        <video id="videoPlayer" poster="assets/images/bottom-img.png" data-dashjs-player="" autoplay="false" src="https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd" controls></video>
     </div>
-    <div class="video-col video-curr">
-        curr
-    </div>
-    <div class="video-col video-right">
-        right
-    </div>
+    <div class="video-right"></div>
+    <img class="video-bg" src="assets/images/video-bg.png">
 </div>
 <!--video area end-->
 <!--tokenomics area start-->
@@ -192,6 +190,37 @@
     <div class="howtobuy-bottom howtobuy-text">HOW TO BUY</div>
 </div>
 <!--howtobuy area end-->
+<!--getticker area start-->
+<div class="getticker flow-col">
+    <p class="getticker-title">
+    </p>
+    <p class="getticker-brief">GET $ALTMAN</p>
+    <div class="getticker-card">
+        <img class="getticker-bg" src="assets/images/getticker-card.png">
+        <p class="getticker-p1">Col ticker</p>
+        <p class="getticker-p2">Ai trend</p>
+        <a class="getticker-buy"></a>
+    </div>
+    <div class="getticker-bom">
+        <img src="assets/images/getticker-bom.png">
+    </div>
+</div>
+<!--getticker area end-->
+<!--bottom-img start-->
+<div class="bottom-img flex-row">
+    <img src="assets/images/bottom-img.png">
+</div>
+<!--bottom-img end-->
+<!--footer start-->
+<div class="footer flex-row justify-between">
+    <a class="footer-media footer-media-tg">
+        <img src="assets/images/footer-media-tg.png">
+    </a>
+    <a class="footer-media footer-media-x">
+        <img src="assets/images/footer-media-x.png">
+    </a>
+</div>
+<!--footer end-->
 
 
 <div style="height: 200px;"></div>
@@ -209,12 +238,16 @@
 </div>
 <!--navigator area end-->
 
+<img class="main-bg main-bg-left" src="assets/images/main-bg-left.png">
+<img class="main-bg main-bg-right" src="assets/images/main-bg-right.png">
+
 <!--script area-->
 <script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/dash.all.min.js"></script>
 <script src="assets/js/index.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-        console.log("init");
+        //init();
     });
 </script>
 </body>
