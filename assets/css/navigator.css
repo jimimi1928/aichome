@@ -3,7 +3,6 @@
     bottom: 20px;
     left: 50%;
     width: 80%;
-    min-width: 1000px;
     height: 102px;
     transform: translateX(-50%);
     background: url(../images/navigator-bg.png);
@@ -13,7 +12,7 @@
 }
 
 .navigator-left {
-    width: 38%;
+    width: 28%;
     height: 100%;
 }
 .navigator-logo {
@@ -22,15 +21,20 @@
 }
 
 .navigator-right {
-    width: 60%;
+    width: 70%;
     height: 100%;
 }
 
 .navigator-text {
     width: 20%;
-    height: 42px;
-    line-height: 42px;
+    font-size: 1em;
+    height: 3em;
+    line-height: 3em;
     text-align: center;
     font-family: 'Forturn';
     color: #FFFFFF;
+}
+
+.navigator-text:hover {
+    font-size: 2em;
 }

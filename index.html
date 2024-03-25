@@ -89,15 +89,15 @@
 </div>
 <!--header area end-->
 <!--carousel area start-->
-<div class="carousel flex-row justify-between">
+<div class="carousel flex-row justify-center">
     <div class="carousel-item carousel-left">
-        <img src="assets/images/carousel-1.png">
+        <img id="carousel-left" src="assets/images/carousel-1.png">
     </div>
     <div class="carousel-item carousel-curr">
-        <img src="assets/images/carousel-1.png">
+        <img id="carousel-curr" src="assets/images/carousel-2.png">
     </div>
     <div class="carousel-item carousel-right">
-        <img src="assets/images/carousel-1.png">
+        <img id="carousel-right" src="assets/images/carousel-3.png">
     </div>
     <img class="carousel-bg carousel-bg-tl" src="assets/images/carousel-bg-tl.png">
     <img class="carousel-bg carousel-bg-tr" src="assets/images/carousel-bg-tr.png">
@@ -108,19 +108,19 @@
     <div class="video-left"></div>
     <div class="video-main">
         <!-- TODO -->
-        <video id="videoPlayer" poster="assets/images/bottom-img.png" data-dashjs-player="" autoplay="false" src="https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd" controls></video>
+        <video id="videoPlayer" poster="assets/images/carousel-1.png" data-dashjs-player="" autoplay="false" src="https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd" controls></video>
     </div>
     <div class="video-right"></div>
     <img class="video-bg" src="assets/images/video-bg.png">
 </div>
 <!--video area end-->
 <!--tokenomics area start-->
-<div class="tokenomics flex-col">
+<div id="tokenomics" class="tokenomics flex-col">
     <p class="tokenomics-title">
     </p>
     <div class="tokenomics-addr flex-row justify-center">
-        <p class="tokenomics-addr-token">A3eME5CetyZPBoWbRUwY3tSe25S6tb18ba9ZPbWk9eFJ[TODO]</p>
-        <p class="tokenomics-copy"></p>
+        <p id="tokenomics-addr-token" class="tokenomics-addr-token">A3eME5CetyZPBoWbRUwY3tSe25S6tb18ba9ZPbWk9eFJ[TODO]</p>
+        <p class="tokenomics-copy" onclick="copyTokenAddr()"></p>
     </div>
     <div class="tokenomics-data flex-row">
         <div class="tokenomics-data-item tokenomics-data-left">
@@ -161,7 +161,7 @@
                 <div class="howtobuy-col-item howtobuy-item-1">
                     <img class="howtobuy-bg" src="assets/images/howtobuy-1.png">
                     <img class="howtobuy-icon" src="assets/images/howtobuy-icon-1.png">
-                    <a class="howtobuy-title" href="#">Phantom</a>
+                    <a class="howtobuy-title" href="https://phantom.app/download" target="_blank">Phantom</a>
                     <p class="howtobuy-content">Download and install the Phantom.</p>
                 </div>
                 <div class="howtobuy-col-item howtobuy-item-2">
@@ -192,14 +192,15 @@
 <!--howtobuy area end-->
 <!--getticker area start-->
 <div class="getticker flow-col">
-    <p class="getticker-title">
-    </p>
+    <div class="getticker-title flex-row justify-center">
+        <img src="assets/images/getticker.png">
+    </div>
     <p class="getticker-brief">GET $ALTMAN</p>
     <div class="getticker-card">
         <img class="getticker-bg" src="assets/images/getticker-card.png">
         <p class="getticker-p1">Col ticker</p>
         <p class="getticker-p2">Ai trend</p>
-        <a class="getticker-buy"></a>
+        <a class="getticker-buy" href="buy.html"></a>
     </div>
     <div class="getticker-bom">
         <img src="assets/images/getticker-bom.png">
@@ -227,13 +228,13 @@
 <!--navigator area start-->
 <div class="navigator flex-row justify-between">
     <div class="navigator-left flex-row justify-center">
-        <img class="navigator-logo" src="assets/images/navigator-logo.png">
+        <a class="navigator-logo" href="index.html"><img src="assets/images/navigator-logo.png"></a>
     </div>
     <div class="navigator-right flex-row justify-start align-center">
-        <p class="navigator-text">BUY</p>
-        <p class="navigator-text">TOKENOMICS</p>
-        <p class="navigator-text">CHART</p>
-        <p class="navigator-text">FAM</p>
+        <a class="navigator-text" href="buy.html">BUY</a>
+        <a class="navigator-text" href="index.html?#tokenomics">TOKENOMICS</a>
+        <a class="navigator-text">CHART</a>
+        <a class="navigator-text">FAM</a>
     </div>
 </div>
 <!--navigator area end-->
@@ -246,10 +247,9 @@
 <script src="assets/js/dash.all.min.js"></script>
 <script src="assets/js/index.js"></script>
 <script type="text/javascript">
-    console.log("hahah11");
-    $(document).ready(function(){
-        //init();
-    });
+$(document).ready(function(){
+    init();
+});
 </script>
 </body>
 </html>

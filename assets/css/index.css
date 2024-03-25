@@ -48,7 +48,7 @@ a {
     width: 100%;
     padding-bottom: 120px;
     div.header-bg {
-        background: url(../images/header-bg.jpg);
+        background: url(../images/header-bg.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
@@ -58,7 +58,6 @@ a {
         top: 0;
         left: 0;
         z-index: -1;
-        opacity: 0.3;
     }
 }
 .header-title {
@@ -104,41 +103,60 @@ a {
     }
     img.carousel-bg-tl {
         left: 0;
-        width: 32%;
+        width: 35%;
     }
     img.carousel-bg-tr {
         right: 0;
-        width: 26%;
+        width: 28%;
     }
 }
 .carousel-item {
     width: 30%;
     display: flex;
     flex-direction: column;
+    position: relative;
     img {
-         width: 100%;
-         height: 100%;
-         margin: auto;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
     }
 }
+.carousel-item:before {
+  content: '';
+  display: block;
+  padding-bottom: 100%; /* 使高度等于宽度 */
+}
+
+.carousel-curr {
+    img {
+        /** animation: moveToLeft 2s linear infinite; **/
+    }
+}
+
+@keyframes moveToLeft {
+  0% { transform: translateX(0%);}
+  100% { transform: translateX(-100%); }
+}
+
 .carousel-left {
     perspective: 800px;
     perspective-origin: 50% 50%;
     img {
+         left: 5%;
          width: 100%;
          height: 100%;
-         transform: rotateY(45deg);
-         margin-right: -10%;
+         transform: rotateY(30deg);
     }
 }
 .carousel-right {
     perspective: 800px;
     perspective-origin: 50% 50%;
     img {
+        right: 5%;
          width: 100%;
          height: 100%;
-         transform: rotateY(-45deg);
-         margin-left: -10%;
+         transform: rotateY(-30deg);
     }
 }
 .carousel-curr {
@@ -155,7 +173,7 @@ a {
 
     img.video-bg {
         position: absolute;
-        top: -180px;
+        top: -35%;
         right: 5%;
         width: 72%;
         opacity: 0.8;
@@ -163,15 +181,23 @@ a {
     }
 }
 .video-main {
-    width: 500px;
-    height: 500px;
+    width: 35%;
     margin-left: auto;
     margin-right: auto;
     background: #000;
+    position: relative;
     video {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
     }
+}
+.video-main:before {
+    content: '';
+    display: block;
+    padding-bottom: 100%; /* 使高度等于宽度 */
 }
 /*video end*/
 /*tokenomics start*/
@@ -188,13 +214,14 @@ a {
 .tokenomics-addr {
     width:100%;
     height: 50px;
+    margin-top: 20px;
 }
 .tokenomics-addr-token {
     height: 50px;
     line-height: 50px;
     font-family: "East Sea Dokdo", sans-serif;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 2em;
     font-style: normal;
     color: #FFF;
 }
@@ -206,23 +233,27 @@ a {
     cursor: pointer;
 }
 .tokenomics-data {
-    margin-top: 98px;
-    height: 320px;
+    margin-top: 38px;
     width: 100%;
+}
+.tokenomics-data:before {
+  content: '';
+  display: block;
+  padding-bottom: 30%; /* 使高度等于宽度 */
 }
 .tokenomics-data-item {
     position: relative;
     p.title {
         font-family: "East Sea Dokdo", sans-serif;
         font-weight: 400;
-        font-size: 3em;
+        font-size: 3vw;
         font-style: normal;
         color: #FFF;
     }
     p.value {
         font-family: "East Sea Dokdo", sans-serif;
         font-weight: 400;
-        font-size: 6em;
+        font-size: 4vw;
         font-style: normal;
         color: #C7F284;
     }
@@ -245,13 +276,13 @@ a {
     }
     p.title {
         position: absolute;
-        top: 0%;
-        left: -13%;
+        top: 30%;
+        left: -23%;
     }
     p.value {
         position: absolute;
-        top: 30%;
-        left: 10%;
+        top: 50%;
+        left: 30%;
     }
 }
 .tokenomics-mint {
@@ -264,13 +295,13 @@ a {
     }
     p.title {
         position: absolute;
-        top: -10%;
+        top: 15%;
         left: -8%;
     }
     p.value {
         position: absolute;
-        top: 30%;
-        left: -5%;
+        top: 50%;
+        left: 10%;
     }
 }
 .tokenomics-tax {
@@ -283,12 +314,12 @@ a {
     }
     p.title {
         position: absolute;
-        top: -10%;
+        top: 13%;
         left: 24%;
     }
     p.value {
         position: absolute;
-        top: 30%;
+        top: 50%;
         left: 30%;
     }
 }
@@ -302,13 +333,13 @@ a {
     }
     p.title {
         position: absolute;
-        top: -10%;
+        top: 14%;
         left: 20%;
     }
     p.value {
         position: absolute;
-        top: 30%;
-        left: 8%;
+        top: 50%;
+        left: 20%;
     }
 }
 .tokenomics-data-right {
@@ -327,7 +358,7 @@ a {
 }
 .howtobuy-text {
     font-family: "GOOD BRUSH";
-    font-size: 18em;
+    font-size: 20vw;
     line-height: 1em;
     text-align: center;
     opacity: 0.3;
@@ -346,10 +377,6 @@ a {
     width: 72%;
     margin-left: auto;
     margin-right: auto;
-    .flow-row {
-        width: 100%;
-        height: 190px;
-    }
 }
 .howtobuy-col-item {
     position: relative;
@@ -375,9 +402,14 @@ a {
         text-align: left;
     }
 }
+.howtobuy-col-item:before {
+ content: '';
+ display: block;
+ padding-bottom: 40%; /* 使高度等于宽度 */
+}
 .howtobuy-item-1 {
     img.howtobuy-bg {
-        top: -80%;
+        top: -75%;
         left: 0;
         width: 110%;
     }
@@ -398,7 +430,7 @@ a {
 }
 .howtobuy-item-2 {
     img.howtobuy-bg {
-        top: -80%;
+        top: -75%;
         right: 0;
         width: 109%;
     }
@@ -420,12 +452,12 @@ a {
 }
 .howtobuy-item-3 {
     img.howtobuy-bg {
-        bottom: -80%;
+        bottom: -50%;
         left: 0;
         width: 93%;
     }
     img.howtobuy-icon {
-        bottom: -97%;
+        bottom: -60%;
         left: 5%;
         width: 30%;
     }
@@ -442,12 +474,12 @@ a {
 }
 .howtobuy-item-4 {
     img.howtobuy-bg {
-        bottom: -80%;
+        bottom: -50%;
         right: 0;
         width: 118%;
     }
     img.howtobuy-icon {
-        bottom: -97%;
+        bottom: -65%;
         left: -13%;
         width: 35%;
     }
@@ -468,11 +500,10 @@ a {
     margin-top: 128px;
 }
 .getticker-title {
-    background: url(../images/getticker.png) no-repeat;
-    width: 1041px;
-    height: 119px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    img {
+        width: 80%;
+    }
 }
 .getticker-brief {
     width:100%;
@@ -517,7 +548,8 @@ a {
         width: 199px;
         height: 56px;
         bottom: 10%;
-        left: 30%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 .getticker-bom {
@@ -532,7 +564,7 @@ a {
 .bottom-img {
     margin-top: 88px;
     img {
-        width: 40%;
+        width: 30%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -540,8 +572,8 @@ a {
 /*bottom-img end*/
 /*footer start*/
 .footer {
-    margin-top: 88px;
-    width: 40%;
+    margin-top: 68px;
+    width: 20%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -550,12 +582,16 @@ a {
         width: 80%;
         margin-left: 10%;
     }
+    img:hover {
+        width: 90%;
+    }
 }
 /*footer end*/
 
 .main-bg {
     position: fixed;
-    top: 150px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 20%;
     z-index: -9;
 }
