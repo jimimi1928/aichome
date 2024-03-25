@@ -585,12 +585,15 @@ a {
         width: 167px;
         height: 28px;
         margin-bottom: 20px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
     }
     .swap-jupiter {
-        background: url(../images/swap-jupiter.png) no-repeat;
+        background-image: url(../images/swap-jupiter.png);
     }
     .swap-bird{
-        background: url(../images/swap-bird.png) no-repeat;
+        background-image: url(../images/swap-bird.png);
     }
 }
 /*swap-area end*/
