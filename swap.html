@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ALTRMAN</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/font.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/flex.css">
+    <link rel="stylesheet" href="assets/css/navigator.css">
+</head>
+<body>
+<!--header area start-->
+<div class="header flex-col justify-start">
+    <div class="header-bg">
+    </div>
+    <div class="swap-area flex-row justify-center">
+        <div class="jupiter" id="integrated-terminal"></div>
+        <div class="swap-list flex-col justify-end">
+            <a class="swap-jupiter"></a>
+            <a class="swap-bird"></a>
+        </div>
+    </div>
+</div>
+<!--header area end-->
+
+
+<!--navigator area start-->
+<div class="navigator flex-row justify-between">
+    <div class="navigator-left flex-row justify-center">
+        <img class="navigator-logo" src="assets/images/navigator-logo.png">
+    </div>
+    <div class="navigator-right flex-row justify-start align-center">
+        <p class="navigator-text">BUY</p>
+        <p class="navigator-text">TOKENOMICS</p>
+        <p class="navigator-text">CHART</p>
+        <p class="navigator-text">FAM</p>
+    </div>
+</div>
+<!--navigator area end-->
+
+<!--script area-->
+<script src='https://terminal.jup.ag/main-v2.js' data-preload></script>
+<!--<script src="assets/js/jquery-3.7.1.min.js"></script>-->
+<script type="text/javascript">
+    window.Jupiter.init({
+        displayMode: "integrated",
+        integratedTargetId: "integrated-terminal",
+        endpoint: "https://tyo67.nodes.rpcpool.com",
+    });
+</script>
+</body>
+</html>

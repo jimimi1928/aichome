@@ -565,3 +565,32 @@ a {
 .main-bg-right{
     right: 0;
 }
+
+/*swap-area start*/
+.swap-area {
+    width: 100%;
+    margin-top: 80px;
+}
+.jupiter {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(48 66 86);
+    border-radius: 20px;
+}
+.swap-list {
+    width: 200px;
+    margin-left: 20px;
+
+    a {
+        width: 167px;
+        height: 28px;
+        margin-bottom: 20px;
+    }
+    .swap-jupiter {
+        background: url(../images/swap-jupiter.png) no-repeat;
+    }
+    .swap-bird{
+        background: url(../images/swap-bird.png) no-repeat;
+    }
+}
+/*swap-area end*/
