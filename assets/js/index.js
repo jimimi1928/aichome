@@ -20,15 +20,19 @@ var g_carousel_datas = [
 ];
 var g_carousel_datas_len = g_carousel_datas.length;
 
+//init method
 function init() {
     //carousel timer
     g_carousel_timer = setInterval("carousel_fresh()",g_carousel_interval);
+
+    document_click_handler();
 
     return;
     $(window).scroll(throttle(function() {
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         console.log("滚动距离" + scrollTop);
     }, 100));
+
 }
 
 function carousel_fresh() {
@@ -54,7 +58,7 @@ function throttle(mainFunction, delay) {
   };
 }
 
-
+// tokenomics token addr copied
 function copyTokenAddr() {
     var tokenAddr = $("#tokenomics-addr-token").text();
     if (navigator.clipboard) {
@@ -62,5 +66,25 @@ function copyTokenAddr() {
       console.log('Text copied to clipboard');
     } else {
       console.error('Clipboard API not available');
+    }
+}
+
+function fam_click() {
+    //$("#navigator_fam_list").show();
+}
+
+
+
+function document_click_handler() {
+    $(document).click(function(e) {
+        fam_click_event_handler(e);
+    })
+}
+
+function fam_click_event_handler(e) {
+    if($(e.target).is('#fam_id') || $(e.target).closest('#fam_id').length > 0) {
+        $("#navigator_fam_list").show();
+    } else {
+        $("#navigator_fam_list").hide();
     }
 }

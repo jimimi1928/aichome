@@ -125,7 +125,7 @@ a {
 .carousel-item:before {
   content: '';
   display: block;
-  padding-bottom: 100%; /* 使高度等于宽度 */
+  padding-bottom: 100%;
 }
 
 .carousel-curr {
@@ -197,7 +197,7 @@ a {
 .video-main:before {
     content: '';
     display: block;
-    padding-bottom: 100%; /* 使高度等于宽度 */
+    padding-bottom: 100%;
 }
 /*video end*/
 /*tokenomics start*/
@@ -239,7 +239,7 @@ a {
 .tokenomics-data:before {
   content: '';
   display: block;
-  padding-bottom: 30%; /* 使高度等于宽度 */
+  padding-bottom: 30%;
 }
 .tokenomics-data-item {
     position: relative;
@@ -405,7 +405,7 @@ a {
 .howtobuy-col-item:before {
  content: '';
  display: block;
- padding-bottom: 40%; /* 使高度等于宽度 */
+ padding-bottom: 40%;
 }
 .howtobuy-item-1 {
     img.howtobuy-bg {

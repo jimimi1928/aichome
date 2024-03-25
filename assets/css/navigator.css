@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    z-index: 999;
 }
 
 .navigator-left {
@@ -37,4 +38,72 @@
 
 .navigator-text:hover {
     font-size: 2em;
+}
+
+.navigator_fam_list {
+    display: none;
+    position: absolute;
+    right: 2%;
+    bottom: 102px;
+    width: 12%;
+}
+.fam_item {
+    width: 100%;
+    position: relative;
+    .fam_list_bg {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .fam_icon {
+        width: 8%;
+        height: 8%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    span {
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-family: "Forturn";
+        font-size: 1vw;
+        line-height: 1em;
+        text-align: center;
+        color: #FFF;
+    }
+    span:hover {
+        color: #2D82FF;
+    }
+}
+
+.fam_item:before {
+  content: '';
+  display: block;
+  padding-bottom: 23.7%;
+}
+
+.fam_list_x {
+    margin-left: 8%;
+    .fam_icon {
+        margin-left: 25%;
+    }
+    span {
+        width: 60%;
+    }
+}
+.fam_list_tg {
+    .fam_icon {
+        margin-left: 20%;
+    }
+    span {
+        width: 75%;
+    }
+}
+.fam_list_c {
+    margin-left: -8%;
+    span {
+        width: 100%;
+    }
 }

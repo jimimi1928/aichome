@@ -30,17 +30,35 @@
     <div class="navigator-left flex-row justify-center">
         <a class="navigator-logo" href="index.html"><img src="assets/images/navigator-logo.png"></a>
     </div>
-    <div class="navigator-right flex-row justify-start align-center">
+    <div class="navigator-right flex-row justify-evenly align-center">
         <a class="navigator-text" href="buy.html">BUY</a>
         <a class="navigator-text" href="index.html?#tokenomics">TOKENOMICS</a>
         <a class="navigator-text">CHART</a>
-        <a class="navigator-text">FAM</a>
+        <a id="fam_id" class="navigator-text">FAM</a>
+    </div>
+    <div id="navigator_fam_list" class="navigator_fam_list flex-col">
+        <a class="fam_item fam_list_x flex-row">
+            <img class="fam_list_bg" src="assets/images/fam_list_bg.png">
+            <img class="fam_icon" src="assets/images/icon-x.png">
+            <span>TWITTER</span>
+        </a>
+        <a class="fam_item fam_list_tg flex-row">
+            <img class="fam_list_bg" src="assets/images/fam_list_bg.png">
+            <img class="fam_icon" src="assets/images/icon-tg.png">
+            <span>TELEGRAM</span>
+        </a>
+        <a class="fam_item fam_list_c flex-row">
+            <img class="fam_list_bg" src="assets/images/fam_list_bg.png">
+            <span>CONTRACT</span>
+        </a>
     </div>
 </div>
 <!--navigator area end-->
 
 <!--script area-->
 <script src='https://terminal.jup.ag/main-v2.js' data-preload></script>
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/index.js"></script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function(){
     //return;
@@ -51,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function(){
         strictTokenList: false,
         defaultExplorer: "Solscan",
     });
+    document_click_handler();
 });
 
 </script>
