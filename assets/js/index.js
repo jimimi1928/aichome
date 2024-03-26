@@ -35,9 +35,10 @@ function index_init() {
     add_scroll_event();
 }
 
+var g_scroll_throttle = 25;
 //-----------
 function add_scroll_event() {
-    $(window).scroll(throttle(scroll_handler, 100));
+    $(window).scroll(throttle(scroll_handler, 25));
 }
 
 function carousel_fresh() {
@@ -89,9 +90,56 @@ function fam_click_event_handler(e) {
 }
 
 function scroll_handler(event) {
+    tokenomics_scroll_handler(event);
+    getticker_scroll_handler();
+}
+
+var g_getickerShowed = false;
+function getticker_scroll_handler(event) {
     var scrollTop = $(window).scrollTop();
-    console.log(scrollTop + "==");
-    if(scrollTop > 2000) {
+    var gettickerTop = $("#getticker").offset().top;
+    var gettickerHeight = $("#getticker").height();
+
+    var windowH = $(window).height();
+
+    if((scrollTop + windowH > gettickerTop + gettickerHeight) && !g_getickerShowed) {
+        g_getickerShowed = true;
+        $("#getticker").animate({ opacity: 1 }, 1500);
+    }
+
+}
+function tokenomics_scroll_handler(event) {
+    var scrollTop = $(window).scrollTop();
+    var tokenomicsTop = $("#tokenomics-outer").offset().top;
+    var howtobuyTop = $("#howtobuy").offset().top;
+    var highestTop = howtobuyTop - $("#tokenomics").height();
+    if(scrollTop < tokenomicsTop) {
+        var dataItems = $("#tokenomics-data").children(".tokenomics-data-item-op");
+        for(var i = 0; i < dataItems.length; i++) {
+            $(dataItems[i]).animate({ opacity: 0 }, g_scroll_throttle);
+        }
+    } else if(scrollTop >= tokenomicsTop && scrollTop < highestTop) {
+        //over tokenomicsTop
+        var totalOffset = highestTop - tokenomicsTop;
+        var offset = scrollTop - tokenomicsTop;
+        var offsetPercent = offset / totalOffset;
+        var dataItems = $("#tokenomics-data").children(".tokenomics-data-item-op");
+        var totalItems = dataItems.length;
+        var percentOfItem = 1.0 / totalItems;
+        for(var i = 0; i < totalItems; i++) {
+            if(offsetPercent >= percentOfItem) {
+                $(dataItems[i]).animate({ opacity: 1 }, g_scroll_throttle);
+                offsetPercent -= percentOfItem;
+            } else {
+                $(dataItems[i]).animate({ opacity: offsetPercent / percentOfItem }, g_scroll_throttle);
+                offsetPercent = 0;
+            }
+        }
+    } else {
+        var dataItems = $("#tokenomics-data").children(".tokenomics-data-item-op");
+        for(var i = 0; i < dataItems.length; i++) {
+            $(dataItems[i]).animate({ opacity: 1 }, g_scroll_throttle);
+        }
     }
 }
 

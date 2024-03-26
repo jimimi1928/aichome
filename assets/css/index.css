@@ -201,8 +201,13 @@ a {
 }
 /*video end*/
 /*tokenomics start*/
-.tokenomics {
+.tokenomics-outer {
     margin-top: 128px;
+    height: 300vh;
+}
+.tokenomics {
+    position: sticky;
+    top: 0;
 }
 .tokenomics-title {
     background: url(../images/TOKENOMICS.png) no-repeat;
@@ -258,6 +263,10 @@ a {
         color: #C7F284;
     }
 }
+.tokenomics-data-item-op {
+    opacity: 0;
+}
+
 .tokenomics-data-left {
     width: 12.7%;
     img {
@@ -498,6 +507,7 @@ a {
 /*getticker start*/
 .getticker {
     margin-top: 128px;
+    opacity: 0;
 }
 .getticker-title {
     width: 100%;
