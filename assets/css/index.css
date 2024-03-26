@@ -18,16 +18,16 @@ a {
 .marquee {
   width: 96%;
   overflow: hidden;
-  margin: 10px auto;
+  margin: 20px auto;
   white-space: nowrap;
   span {
     position: relative;
-    margin-right: 10px;
+    margin-right: 1vw;
     font-family: "East Sea Dokdo", sans-serif;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 2em;
     font-style: normal;
-    line-height: 50px;
+    line-height: 1em;
     color: #FFFFFF;
     animation: marquee 20s linear infinite running;
   }
@@ -46,7 +46,7 @@ a {
     /**background: url(../images/header-bg.jpg);*/
     position: relative;
     width: 100%;
-    padding-bottom: 120px;
+    padding-bottom: 145px;
     div.header-bg {
         background: url(../images/header-bg.png);
         background-size: cover;
@@ -66,12 +66,12 @@ a {
     height: 120px;
     font-family: "GOOD BRUSH";
     line-height: 120px;
-    font-size: 120px;
+    font-size: 10vw;
     color: #FFFFFF;
     text-align: center;
 }
 .header-brief {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     background: url(../images/header-brief-bg.png) no-repeat;
@@ -93,12 +93,12 @@ a {
 
 /*carousel start*/
 .carousel {
-    margin-top: 138px;
+    margin-top: 10vw;
     position: relative;
 
     img.carousel-bg {
         position: absolute;
-        top: -138px;
+        top: -10vw;
         z-index: -1;
     }
     img.carousel-bg-tl {
@@ -387,14 +387,14 @@ a {
     }
     .howtobuy-title {
         font-family: "GOOD BRUSH";
-        font-size: 3em;
+        font-size: 3.5vw;
         line-height: 1em;
         text-align: center;
         position: absolute;
     }
     .howtobuy-content {
         font-family: "East Sea Dokdo";
-        font-size: 2em;
+        font-size: 2vw;
         line-height: 1em;
         text-align: center;
         color: #FFF;
@@ -463,13 +463,13 @@ a {
     }
     .howtobuy-title {
         top: 10%;
-        left: 10%;
+        left: 6%;
         color: #2D82FF;
     }
     .howtobuy-content {
         top: 40%;
-        left: 10%;
-        width: 50%;
+        left: 6%;
+        width: 45%;
     }
 }
 .howtobuy-item-4 {
@@ -544,9 +544,10 @@ a {
     }
     a.getticker-buy {
         position: absolute;
-        background: url(../images/getticker-buy.png);
-        width: 199px;
-        height: 56px;
+        background: url(../images/getticker-buy.png) no-repeat center;
+        background-size: contain;
+        width: 14vw;
+        height: 3.94vw;
         bottom: 10%;
         left: 50%;
         transform: translateX(-50%);
@@ -554,7 +555,7 @@ a {
 }
 .getticker-bom {
     width: 100%;
-    margin-top: -60px;
+    margin-top: -4vw;
     img {
         width: 100%;
     }
@@ -576,6 +577,7 @@ a {
     width: 20%;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 120px;
 }
 .footer-media {
     img {

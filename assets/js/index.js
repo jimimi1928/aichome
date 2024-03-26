@@ -31,13 +31,13 @@ function index_init() {
     //tokenomics-copy
     $("#tokenomics-copy").click(copyTokenAddr);
 
-    return;
     //add scroll event
-    $(window).scroll(throttle(function() {
-        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        console.log("scroll -> " + scrollTop);
-    }, 100));
+    add_scroll_event();
+}
 
+//-----------
+function add_scroll_event() {
+    $(window).scroll(throttle(scroll_handler, 100));
 }
 
 function carousel_fresh() {
@@ -47,20 +47,6 @@ function carousel_fresh() {
     $("#carousel-left").attr("src", g_img_dir + g_carousel_datas[left]["perspective"]);
     $("#carousel-curr").attr("src", g_img_dir + g_carousel_datas[g_carousel_inx]["normal"]);
     $("#carousel-right").attr("src", g_img_dir + g_carousel_datas[right]["perspective"]);
-}
-
-
-function throttle(mainFunction, delay) {
-  let timerFlag = null; // Variable to keep track of the timer
-  // Returning a throttled version
-  return (...args) => {
-    if (timerFlag === null) { // If there is no timer currently running
-      mainFunction(...args); // Execute the main function
-      timerFlag = setTimeout(() => { // Set a timer to clear the timerFlag after the specified delay
-        timerFlag = null; // Clear the timerFlag to allow the main function to be executed again
-      }, delay);
-    }
-  };
 }
 
 // tokenomics token addr copied
@@ -74,6 +60,7 @@ function copyTokenAddr(event) {
     }
 }
 
+//--- global tips msg
 function showGlobalTips(event) {
     var clientX = event.clientX;
     var clientY = event.clientY;
@@ -87,8 +74,6 @@ function showGlobalTips(event) {
     }, 2000);
 }
 
-
-
 function document_click_handler() {
     $(document).click(function(e) {
         fam_click_event_handler(e);
@@ -101,4 +86,25 @@ function fam_click_event_handler(e) {
     } else {
         $("#navigator_fam_list").hide();
     }
+}
+
+function scroll_handler(event) {
+    var scrollTop = $(window).scrollTop();
+    console.log(scrollTop + "==");
+    if(scrollTop > 2000) {
+    }
+}
+
+//------utils
+function throttle(mainFunction, delay) {
+  let timerFlag = null; // Variable to keep track of the timer
+  // Returning a throttled version
+  return (...args) => {
+    if (timerFlag === null) { // If there is no timer currently running
+      mainFunction(...args); // Execute the main function
+      timerFlag = setTimeout(() => { // Set a timer to clear the timerFlag after the specified delay
+        timerFlag = null; // Clear the timerFlag to allow the main function to be executed again
+      }, delay);
+    }
+  };
 }
