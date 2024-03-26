@@ -221,7 +221,7 @@ a {
     line-height: 50px;
     font-family: "East Sea Dokdo", sans-serif;
     font-weight: 400;
-    font-size: 2em;
+    font-size: 1.5em;
     font-style: normal;
     color: #FFF;
 }
@@ -633,3 +633,15 @@ a {
     }
 }
 /*swap-area end*/
+
+.global-tips {
+    position: fixed;
+    display: none;
+    height: 50px;
+    line-height: 50px;
+    font-family: "East Sea Dokdo", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    font-style: normal;
+    color: #FFF;
+}

@@ -21,16 +21,21 @@ var g_carousel_datas = [
 var g_carousel_datas_len = g_carousel_datas.length;
 
 //init method
-function init() {
+function index_init() {
     //carousel timer
     g_carousel_timer = setInterval("carousel_fresh()",g_carousel_interval);
 
+    //document click handler
     document_click_handler();
 
+    //tokenomics-copy
+    $("#tokenomics-copy").click(copyTokenAddr);
+
     return;
+    //add scroll event
     $(window).scroll(throttle(function() {
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        console.log("滚动距离" + scrollTop);
+        console.log("scroll -> " + scrollTop);
     }, 100));
 
 }
@@ -59,18 +64,27 @@ function throttle(mainFunction, delay) {
 }
 
 // tokenomics token addr copied
-function copyTokenAddr() {
+function copyTokenAddr(event) {
     var tokenAddr = $("#tokenomics-addr-token").text();
     if (navigator.clipboard) {
       navigator.clipboard.writeText(tokenAddr);
-      console.log('Text copied to clipboard');
+      showGlobalTips(event);
     } else {
       console.error('Clipboard API not available');
     }
 }
 
-function fam_click() {
-    //$("#navigator_fam_list").show();
+function showGlobalTips(event) {
+    var clientX = event.clientX;
+    var clientY = event.clientY;
+    $('#global-tips').css({
+      'top': (clientY + 20) + 'px',
+      'left': (clientX - 60) + 'px',
+    });
+    $('#global-tips').show();
+    setTimeout(function() {
+        $('#global-tips').hide();
+    }, 2000);
 }
 
 
