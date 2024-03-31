@@ -33,6 +33,12 @@ function index_init() {
 
     //add scroll event
     add_scroll_event();
+
+    if(isTokenomicsLocation()) {
+        tokenomicsAllToOpacity(1);
+    } else {
+        $("#tokenomics-outer").css("height", '300vh');
+    }
 }
 
 var g_scroll_throttle = 25;
@@ -83,14 +89,20 @@ function document_click_handler() {
 
 function fam_click_event_handler(e) {
     if($(e.target).is('#fam_id') || $(e.target).closest('#fam_id').length > 0) {
-        $("#navigator_fam_list").show();
+        if($("#navigator_fam_list").is(':hidden')) {
+            $("#navigator_fam_list").show();
+        } else {
+            $("#navigator_fam_list").hide();
+        }
     } else {
         $("#navigator_fam_list").hide();
     }
 }
 
 function scroll_handler(event) {
-    tokenomics_scroll_handler(event);
+    if(!isTokenomicsLocation()) {
+        tokenomics_scroll_handler(event);
+    }
     getticker_scroll_handler();
 }
 
@@ -102,22 +114,20 @@ function getticker_scroll_handler(event) {
 
     var windowH = $(window).height();
 
-    if((scrollTop + windowH > gettickerTop + gettickerHeight) && !g_getickerShowed) {
+    if((scrollTop + windowH > gettickerTop + gettickerHeight / 3) && !g_getickerShowed) {
         g_getickerShowed = true;
         $("#getticker").animate({ opacity: 1 }, 1500);
     }
 
 }
 function tokenomics_scroll_handler(event) {
+
     var scrollTop = $(window).scrollTop();
     var tokenomicsTop = $("#tokenomics-outer").offset().top;
     var howtobuyTop = $("#howtobuy").offset().top;
     var highestTop = howtobuyTop - $("#tokenomics").height();
     if(scrollTop < tokenomicsTop) {
-        var dataItems = $("#tokenomics-data").children(".tokenomics-data-item-op");
-        for(var i = 0; i < dataItems.length; i++) {
-            $(dataItems[i]).animate({ opacity: 0 }, g_scroll_throttle);
-        }
+        tokenomicsAllToOpacity(0);
     } else if(scrollTop >= tokenomicsTop && scrollTop < highestTop) {
         //over tokenomicsTop
         var totalOffset = highestTop - tokenomicsTop;
@@ -136,11 +146,19 @@ function tokenomics_scroll_handler(event) {
             }
         }
     } else {
-        var dataItems = $("#tokenomics-data").children(".tokenomics-data-item-op");
-        for(var i = 0; i < dataItems.length; i++) {
-            $(dataItems[i]).animate({ opacity: 1 }, g_scroll_throttle);
-        }
+        tokenomicsAllToOpacity(1);
     }
+}
+
+function tokenomicsAllToOpacity(opacity) {
+    var dataItems = $("#tokenomics-data").children(".tokenomics-data-item-op");
+    for(var i = 0; i < dataItems.length; i++) {
+        $(dataItems[i]).animate({ 'opacity': opacity }, g_scroll_throttle);
+    }
+}
+
+function isTokenomicsLocation() {
+    return '#tokenomics' == window.location.hash;
 }
 
 //------utils

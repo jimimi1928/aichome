@@ -29,7 +29,7 @@ a {
     font-style: normal;
     line-height: 1em;
     color: #FFFFFF;
-    animation: marquee 20s linear infinite running;
+    animation: marquee 10s linear infinite running;
   }
   span.dark {
     opacity: 0.5;
@@ -61,31 +61,43 @@ a {
     }
 }
 .header-title {
-    margin-top: 40px;
+    margin-top: 45px;
     width: 100%;
     height: 120px;
-    font-family: "GOOD BRUSH";
     line-height: 120px;
-    font-size: 10vw;
+    font-family: "GOOD BRUSH";
+    font-size: 5vw;
     color: #FFFFFF;
     text-align: center;
+
+    span{
+        margin-right: 3vw;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .header-title-altrman {
+        background-image: url(../images/header_title_bg.png);
+        background-size: 100% 200%;
+        background-position: center center;
+    }
 }
 .header-brief {
-    margin-top: 30px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    background: url(../images/header-brief-bg.png) no-repeat;
-    width: 656px;
-    height: 204px;
-    opacity: 1;
+    background-image: url(../images/header-brief-bg.png);
+    background-size: 100% 100%;
+    background-position: center center;
+    width: 65vw;
+    height: 16vw;
     p {
-        margin: 40px 60px 0 60px;
+        margin: 2vw 3vw 1vw 3vw;
         text-align: center;
         font-family: "East Sea Dokdo", sans-serif;
         font-weight: 400;
-        font-size: 28px;
+        font-size: 3vw;
         font-style: normal;
-        line-height: 32px;
+        line-height: 3vw;
         color: #FFF;
     }
 }
@@ -203,7 +215,6 @@ a {
 /*tokenomics start*/
 .tokenomics-outer {
     margin-top: 128px;
-    height: 300vh;
 }
 .tokenomics {
     position: sticky;
