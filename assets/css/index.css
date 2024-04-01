@@ -614,6 +614,10 @@ a {
         left: 50%;
         transform: translateX(-50%);
     }
+    a.getticker-buy:hover {
+        width: 15vw;
+        height: 4.22vw;
+    }
 }
 .getticker-bom {
     width: 100%;
