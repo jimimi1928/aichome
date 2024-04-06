@@ -1,4 +1,6 @@
 
+//TODO
+var g_altr_address = "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm";
 var g_img_dir = "assets/images/";
 //carousel variable
 var g_carousel_timer = 0;
@@ -39,6 +41,23 @@ function index_init() {
     } else {
         $("#tokenomics-outer").css("height", '300vh');
     }
+}
+
+function init_buy() {
+    window.Jupiter.init({
+        displayMode: "integrated",
+        integratedTargetId: "integrated-terminal",
+        endpoint: "https://neat-hidden-sanctuary.solana-mainnet.discover.quiknode.pro/2af5315d336f9ae920028bbb90a73b724dc1bbed",
+        strictTokenList: false,
+        defaultExplorer: "Solscan",
+        formProps: {
+            fixedOutputMint: true,
+            initialInputMint: "So11111111111111111111111111111111111111112",
+            //replace with altr addr
+            initialOutputMint: g_altr_address,
+        },
+    });
+    document_click_handler()
 }
 
 var g_scroll_throttle = 25;
